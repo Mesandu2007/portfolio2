@@ -484,7 +484,7 @@
                 entries.forEach(entry => { // for each used to run the function for each entry
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
-                        observer.unobserve(entry.target); // animate only once
+                    
                     }
                     else{
                         entry.target.classList.remove("show");
