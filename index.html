@@ -182,6 +182,33 @@
             }
             .ab{
                 color: white;
+                font-weight: 900;
+                text-align: center;
+                margin-top: 170px;
+                font-size: 27px;
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 1s ease, transform 1s ease;
+            }
+
+            .reveal.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .card1{
+                background-color: #201f1f;
+                color: rgb(205, 203, 203);
+                font-size: 17px;
+                display: flex;
+                margin: 20px auto;
+                padding: 20px;
+                line-height: 1.6;
+                max-width: 1200px;
+                border-radius: 7px;
+                align-items: center;
+                justify-content: center;
             }
 
 
@@ -348,6 +375,9 @@
                 .social-button{
                     font-size:19px ;
                 }
+                .card1{
+                    font-size: 14px;
+                }
 
             }
           
@@ -406,8 +436,15 @@
 
 
         </div>
-        <div class="c1">
+        <div class="c1 reveal">
             <h3 class="ab">About Me</h3>
+            <div class="card1">
+                <p>I’m Mesandu Gunarwardhana, a second-year BSc Computer Science student at the University of Westminster with a strong passion for technology and problem-solving.
+                    My skills span across data science and front-end development, where I enjoy turning data into insights and designing interactive, user-friendly digital experiences.
+                    I’m constantly exploring new tools and frameworks to grow as a developer and deepen my understanding of how data can drive innovation.
+                    With a blend of creativity and technical expertise, my goal is to build solutions that make a real impact while continuing to develop into a versatile software professional. </p>
+
+            </div>
         </div>
 
         
@@ -437,8 +474,22 @@
                 img.classList.add('show');
 
             });
+            document.addEventListener("DOMContentLoaded", function () {
+            const reveals = document.querySelectorAll(".reveal");
 
-           
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target); // animate only once
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            reveals.forEach(el => observer.observe(el));
+        });
+
+                
 
         </script>
 
