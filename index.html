@@ -272,9 +272,24 @@
                 padding-bottom: 20px;
                 border-radius: 12px;
                 border:0.1px gainsboro solid;
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+                transition: opacity 0.6s ease, transform 0.6s ease;
 
 
             }
+            .procards.show {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+
+
+
+
+
+
+
+
             .projectpic{
                 
                 width:100%;
@@ -651,6 +666,27 @@
             }, { threshold: 0.2 });
 
             reveals.forEach(el => observer.observe(el));
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".procards");
+        const observer = new IntersectionObserver(
+            (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                // Uncomment next line if you want animation only once
+                // observer.unobserve(entry.target);
+                } else {
+                // Remove if you want re-animation on scroll back
+                entry.target.classList.remove("show");
+                }
+            });
+            },
+            { threshold: 0.2 }
+        );
+
+        cards.forEach((card) => observer.observe(card));
         });
 
                 
