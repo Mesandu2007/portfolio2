@@ -379,6 +379,7 @@
                     font-size: 17px;
                     margin-left: 5px;
                     margin-right: 5px;
+                    line-height: 1.4;
                 }
 
             }
@@ -476,14 +477,17 @@
                 img.classList.add('show');
 
             });
-            document.addEventListener("DOMContentLoaded", function () {
-            const reveals = document.querySelectorAll(".reveal");
+            document.addEventListener("DOMContentLoaded", function () {  // This waits until the HTML page has fully loaded
+            const reveals = document.querySelectorAll(".reveal"); // takes all the elements with the class .reveal
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
+            const observer = new IntersectionObserver((entries, observer) => {   //Creates a new IntersectionObserver                                                        //  which can detect when elements enter or leave the viewpor
+                entries.forEach(entry => { // for each used to run the function for each entry
                     if (entry.isIntersecting) {
                         entry.target.classList.add("show");
                         observer.unobserve(entry.target); // animate only once
+                    }
+                    else{
+                        entry.target.classList.remove("show");
                     }
                 });
             }, { threshold: 0.2 });
