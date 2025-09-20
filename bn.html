@@ -714,7 +714,7 @@
             document.addEventListener("DOMContentLoaded",initRevealAnimations);
             function initRevealAnimations(){
                 const reveals=document.querySelectorAll(".reveal");
-                const observer=new IntersectionObserver(handleRevealEntries, {treshold:0.2});
+                const observer=new IntersectionObserver(handleRevealEntries, {threshold:0.2});
 
                 reveals.forEach(function(el) {
                     observer.observe(el);
@@ -723,7 +723,7 @@
 
                 function handleRevealEntries(entries){
                     entries.forEach(function(entry){
-                        if(entry.isInteresting){
+                        if(entry.isIntersecting){
                             entry.target.classList.add("show");
                         }
                         else{
