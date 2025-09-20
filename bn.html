@@ -1,0 +1,774 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>Responsive Navbar</title>
+        <style>
+            html{
+                scroll-behavior: smooth;
+            }
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                min-height: 100px;
+                background-color:black;
+                font-family: Arial, Helvetica, sans-serif;
+                overflow-x: hidden;
+            }
+            nav{
+                
+                background-color: rgba(92, 90, 90, 0.408);
+                border-radius: 7px;
+                width:100%;
+                margin-top: 10px;
+            }
+    
+            nav ul{
+                width:100%;
+                list-style: none;
+                display:flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            
+            nav li{
+                height:50px;
+            }
+            nav a{
+                height:100%;
+                font-size: 14px;
+                padding:0 30px;
+                text-decoration: none;
+                display:flex;
+                align-items: center;
+                color:white;
+
+            }
+            nav a:not(.name a):hover{
+                background-color: grey;
+                border-radius: 8px;
+            }
+            nav li:first-child {
+                margin-right: auto;
+            }
+            .name a{
+                font-weight: bolder;
+                font-size: 29px;
+                z-index: 1000;
+                margin-left: 0px;
+                
+            }
+            
+            
+
+
+          
+            .sidebar{
+                position:fixed;
+                height:100vh;
+                width:250px;
+                background-color: rgba(255, 255, 255, 0.203);
+                box-shadow:-10px 0 10px rgba(0,0,0,0.1);
+                display:flex;
+                z-index: 999;
+                display:none;
+                background-color: rgba(255, 255, 255, 0.203);
+                box-shadow:-10px 0 10px rgba(0,0,0,0.1);
+                backdrop-filter: blur(10px);
+                flex-direction:column;
+                align-items: flex-start ;
+                color:black;
+                
+                justify-content:flex-start;
+                transform: translate(-100%);
+                transition: transform 0.3s ease, opacity 0.3s ease;
+
+            }
+            .sidebar.show {
+                transform: translateX(0); 
+              /*  pointer-events: auto;*/
+               
+            }
+            .sidebar li{
+                width:100%;
+
+            }
+            .sidebar a{
+                width:100%;
+            }
+            .menu-button{
+                display: none;
+            }
+           
+            .pro{
+                border-radius:30px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                height:300px;
+                margin-top: 60px;
+                transition: transform 0.3s ease;
+            
+            }
+            .container{
+                width:100%;
+                height:50px;
+                display: flex;
+                padding-top: 80px;
+                align-items: flex-start;
+                justify-content: center;
+
+            }
+         
+            .auto-type{
+                color:blue;
+                font-size: 40px;
+                font-weight:900;
+                display: inline-block;
+                
+                
+
+            }
+            .pro{
+                border-radius:30px;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+                height:300px;
+                margin-top:30px;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: transform 1.0s ease, opacity 0.8s ease;
+            
+            }
+            .pro.show{
+                opacity:1;
+                transform: translateY(0);
+            }
+            .pro:hover {
+                border-color: #ff000d;    /* sky blue border on hover */
+                box-shadow: 0 0 20px #ff000d;
+            }
+            
+            .social-icon{
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                gap: 50px;
+
+            }
+            .social-button {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                background-color: #f3f3f3;
+                color: #333;
+                padding: 10px 20px;
+                border-radius: 30px;
+                text-decoration: none;
+                
+                transition: background-color 0.3s ease;
+            }
+
+            .social-button i {
+                color: #a259ff; /* purple-like color */
+                font-size: 18px;
+            }
+            .social-button:hover{
+                background: #555;
+                box-shadow: 0 0 15px rgba(255,255,255,0.7);
+                transform: scale(1.05);
+                color: white;
+            }
+            .ab{
+                color: white;
+                font-weight: 900;
+                text-align: center;
+                margin-top: 170px;
+                font-size: 27px;
+            }
+            .reveal {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: opacity 2s ease, transform 2s ease;
+            }
+
+            .reveal.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            .card1{
+                background-color: #201f1f;
+                color: rgb(173, 171, 171);
+                font-size: 17px;
+                display: flex;
+                margin: 20px auto;
+                padding: 20px;
+                line-height: 1.6;
+                max-width:85%;
+                border-radius: 7px;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid whitesmoke;
+            }
+            .bt1{
+                margin-left: auto;
+                margin-right: auto;
+                color:white;
+                
+                height: fit-content;
+                width: fit-content;
+                border-radius: 6px;
+                background-color: blue;
+            }
+            .cv-download{
+                display: flex;
+                justify-content: center;
+                margin-top:20px;
+            }
+            .cv-button{
+                background-color:red;
+                color: white;
+                padding: 12px 30px;
+                border-radius: 7px;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 16px;
+                box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+                transition: all 0.3s ease;
+                
+
+            }
+            .cv-button:hover {
+                background-color: #0056b3;   /* darker blue on hover */
+                transform: scale(1.05);
+                box-shadow: 0 0 18px rgba(0, 123, 255, 0.8);
+            }
+            .c2{
+                margin-top: 90px;
+            }
+            .c2 h3{
+                font-size: 27px;
+                color:white;
+                text-align: center;
+                font-weight: 900;
+            }
+            .projects{
+                display: flex;
+                justify-content: center;
+                gap:20px;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-top:20px;
+            }
+            .procards{
+                background-color: #201f1f;
+                color: rgb(205, 203, 203);
+                width:400px;
+                max-width: 400px;
+                padding-bottom: 20px;
+                border-radius: 12px;
+                
+                opacity: 0;
+                transform:translateY(60px) scale(0.85);
+                transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1.61, 0.36, 1); 
+
+
+            }
+            .procards.show {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);;
+            }
+
+            .projectpic{
+                width:100%;
+                height: 200px;
+                border-radius:12px;
+                transition: 0.3 ease;
+            }
+            .projectpic:hover{
+                transform: scale(1.02);
+                
+
+            }
+            .procards h4{
+                margin-top:17px;
+                margin-left: 17px;
+                font-size:16px;
+                color:white;
+                font-weight:600;
+            }
+            .procards p{
+                font-size: 16px;
+                color: rgb(205, 203, 203);
+                line-height: 1.4;
+                margin-top:16px;
+                margin-left: 17px;
+                margin-right: 10px;
+            }
+            .sk{
+                display: flex;
+                margin-top: 16px;
+                margin-left: 17px;
+                gap: 7px;
+            }
+            .lan{
+                border: rgb(230, 230, 230) solid 2px;
+                border-radius: 15px;
+                background-color: #201f1f;
+                padding:8px;
+                font-size:13px;
+                color: rgb(205, 203, 203) ;
+            }
+            .git{
+                display: flex;
+                gap: 11px;
+                margin-top: 16px;
+                margin-left: 17px;
+
+            }
+            .gitbtn{
+                text-decoration: none;
+                width: fit-content;
+                border-radius: 7px;
+                background-color: blue;
+                color: white;
+                font-size: 15px;
+                padding: 10px;
+                transition:all 0.3 ease;
+            }
+            .gitbtn:hover{
+                box-shadow: 0 0 15px 4px #0056b3;
+                transform: scale(1.03);
+            }
+             .demo{
+                text-decoration: none;
+                width: fit-content;
+                border-radius: 7px;
+                background-color: rgb(255, 0, 8);
+                color: white;
+                font-size: 15px;
+                padding: 10px;
+                transition:all 0.3 ease;
+            }
+            .demo:hover{
+                box-shadow: 0 0 15px 4px rgb(255, 0, 8);
+                transform: scale(1.03);
+            }
+
+
+
+
+          
+
+
+
+
+
+            @media(max-width:600px){
+                .hideOnMobile{
+                    display:none;
+                }
+                .menu-button{
+                    display: block;
+                }
+                nav a{
+                    font-size:19px;
+                }
+
+               
+                .sidebar{
+                    display: flex;
+                }
+               
+                nav a:not(.name a):hover{
+                    background-color: grey;
+                    border-radius: 8px;
+                    width: fit-content;
+                }
+                .auto-type{
+                    font-size: 30px;
+                    color:blue;
+                    text-align: center;
+                    line-height:1.5;
+                }
+
+                .auto-type .second-line{
+                    display: block;
+                    font-size: 30px;
+                    
+                }
+                .name a{
+                    font-size:25px;
+                }
+               
+
+
+                nav a:not(.name a):hover{
+                    background-color: grey;
+                    border-radius: 8px;
+                    width: fit-content;
+ 
+                }
+                .pro{
+                    margin-top:45px;
+                }
+
+            }
+            @media(min-width:600px) and (max-width:1050px){
+                .hideOnMobile{
+                    display:none;
+                }
+                .menu-button{
+                    display: block;
+                }
+                nav a{
+                    font-size: 15px;
+                }
+
+               
+                .sidebar{
+                    display: flex;
+                }
+               
+                nav a:not(.name a):hover{
+                    background-color: grey;
+                    border-radius: 8px;
+                    width: fit-content;
+                }
+                .auto-type{
+                    font-size: 30px;
+                    color:blue;
+                    text-align: center;
+                    line-height:1.5;
+                }
+
+                .auto-type .second-line{
+                    display: block;
+                    font-size: 30px;
+                    
+                }
+                .name a{
+                    font-size:26px;
+                }
+           
+
+
+                nav a:not(.name a):hover{
+                    background-color: grey;
+                    border-radius: 8px;
+                    width: fit-content;
+ 
+                }
+                .pro{
+                    margin-top:45px ;
+                }
+                .card1{
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .procards {
+                    flex: 1 1 calc(50% - 40px); /* 2 cards in a row */
+                    max-width: calc(50% - 40px);
+                }
+                .projects{
+                    align-items: stretch;
+                }
+                                
+
+
+            }
+            @media(max-width:600px) and (pointer: coarse){
+                .hideOnMobile{
+                    display:none;
+                }
+                .menu-button{
+                    display: block;
+                }
+                nav a{
+                    font-size:20px;
+                }
+
+               
+                .sidebar{
+                    display: flex;
+                }
+               
+                nav a:not(.name a):hover{
+                    background-color: grey;
+                    border-radius: 8px;
+                    width: fit-content;
+                }
+                .auto-type{
+                    font-size: 35px;
+                    color:blue;
+                    text-align: center;
+                    line-height:1.5;
+                }
+
+                .auto-type .second-line{
+                    display: block;
+                    font-size: 35px;
+                    
+                }
+                .name a{
+                    font-size:22px;
+                }
+               
+
+
+                nav a:not(.name a):hover{
+                    background-color: grey;
+                    border-radius: 8px;
+                    width: fit-content;
+ 
+                }
+                .pro{
+                    margin-top:45px;
+                    height: 250px;
+                }
+                .social-button i{
+                    font-size: 29px;
+                }
+                .social-button{
+                    font-size:19px ;
+                }
+                .card1{
+                    font-size: 19px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    line-height: 1.6;
+                    
+                }
+
+            }
+          
+            
+            
+
+        </style>
+
+
+    </head>
+    <body>
+        <nav>
+            <ul class="sidebar" id="sideb">
+                <li onclick="hideSidebar()" ><a>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#e3e3e3">
+                <path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7a1 1 0 1 0-1.41 1.41L10.59 12l-4.89 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"/>
+                </svg></a></li>
+
+                <li><a href="#about">ABOUT ME</a></li>
+                <li><a href="#projectid">PROJECTS</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">EDUCATION</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul>
+            <ul>
+                <li class="name"><a href="#">Mesandu Manujitha</a></li>
+                <li class="hideOnMobile"><a href="#about">ABOUT ME</a></li>
+                <li class="hideOnMobile"><a href="#projectid">PROJECTS</a></li>
+                <li class="hideOnMobile"><a href="#">SKILLS</a></li>
+                <li class="hideOnMobile"><a href="#">EDUCATION</a></li>
+                <li class="hideOnMobile"><a href="#">CONTACT</a></li>
+                <li class="menu-button" onclick="showSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg></a></li>
+                
+            </ul>
+            
+        </nav>
+
+         
+        </nav>
+        <div class="container">
+            <h1><span class="auto-type"></span></h1>
+            
+
+        </div>
+        <img src="pic.png"  class="pro">
+        <div class="social-icon">
+            <a class="social-button" href="https://github.com/Mesandu2007" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a>
+            <a class="social-button" href=" https://www.linkedin.com/in/mesandugun2007/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>LinkedIn
+            </a>
+        </div>
+        <div class="cv-download">
+            <a href="Mesandu_CV.pdf" download class="cv-button">DOWNLOAD CV</a>
+        </div>
+
+    
+
+        <div class="c1 reveal" id="about">
+            <h3 class="ab">About Me</h3>
+            <div class="card1">
+                <p>I’m Mesandu Gunarwardhana, a second-year BSc Computer Science student at the University of Westminster with a strong passion for technology and problem-solving.
+                    My skills span across data science and front-end development, where I enjoy turning data into insights and designing interactive, user-friendly digital experiences.
+                    I’m constantly exploring new tools and frameworks to grow as a developer and deepen my understanding of how data can drive innovation.
+                    With a blend of creativity and technical expertise, my goal is to build solutions that make a real impact while continuing to develop into a versatile software professional. </p>
+
+            </div>
+        </div>
+        <div class="c2 reveal" id="projectid">
+            <h3>Projects</h3>
+            <div class="projects">
+                <div class="procards">
+                    <img src="aqua.png" class="projectpic">
+                    <h4>Aquatic Advocates Website</h4>
+                    <p>This project,Aquatic Advocates, was created as a group project.
+                       It is inspired by the UN's 17 Goals, with a focus on the topic of Oceans.
+                    </p>
+                    <div class="sk">
+                        <button class="lan">HTML/CSS</button>
+                        <button class="lan">Java Script</button>
+                    </div>
+                    <div class="git">
+                        <a href="https://github.com/Mesandu2007" class="gitbtn" target="_blank">View Code</a>
+
+                    </div>
+                </div>
+                <div class="procards">
+                    <img src="Task2.png" class="projectpic">
+                    <h4>Task Management System</h4>
+                    <p>Built a Task Management System with CRUD functionalies and a GUI.
+                       Also it could search and sort  according to the criteria provided.
+                    </p>
+                    <div class="sk">
+                        <button class="lan">Python</button>
+                        <button class="lan">Thikinter GUI</button>
+                    </div>
+                     <div class="git">
+                        <a href="https://github.com/Mesandu2007/Task-Management-System" class="gitbtn" target="_blank">View Code</a>
+                    </div>
+                </div>
+                <div class="procards">
+                    <img src="feed.png" class="projectpic">
+                    <h4>Simple Feedback Form</h4>
+                    <p>Created a Feedback Form with HTML and CSS and Javascript for validation.
+                       When submmited the form content will be sent to the respective email address. 
+                    </p>
+                    <div class="sk">
+                        <button class="lan">Javascript</button>
+                        <button class="lan">HTML/CSS</button>
+                    </div>
+                     <div class="git">
+                        <a href="https://github.com/Mesandu2007/Simple-Feedback-Form" class="gitbtn" target="_blank">View Code</a>
+                        <a href="https://mesandu2007.github.io/Simple-Feedback-Form/" class="demo" target="_blank">Live Demo</a>
+                    </div>
+                    
+                </div>
+                <div class="procards">
+                    <img src="s.png" class="projectpic">
+                    <h4>IIT Sports House Finder</h4>
+                    <p>Developed a  simple web application where students can enter thier IIT number and find the house they belong to.</p>
+                    <div class="sk">
+                        <button class="lan">Javascript</button>
+                        <button class="lan">HTML/CSS</button>
+                    </div>
+                    <div class="git">
+                        <a href="https://github.com/Mesandu2007/Mesandu2007-IIT-Sports-House-Finder" class="gitbtn" target="_blank">View Code</a>
+                        <a href="https://mesandu2007.github.io/Mesandu2007-IIT-Sports-House-Finder/" class="demo" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                
+
+            </div>
+
+        </div>
+        
+
+        
+       
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script>
+            function showSidebar(){
+                const sidebar=document.querySelector('.sidebar');
+                sidebar.classList.add('show');
+
+            }
+            function hideSidebar(){
+                const sidebar=document.querySelector('.sidebar');
+                sidebar.classList.remove('show');
+
+            }
+
+            var typed=new Typed(".auto-type",{
+                strings:["COMPUTER SCIENCE<span class='second-line'> UNDERGRADUATE</span>"],
+                typeSpeed:60,
+                backSpeed:70,
+                loop:true
+
+            })
+            window.addEventListener('DOMContentLoaded',function(){
+                const img=document.querySelector('.pro');
+                img.classList.add('show');
+
+            });
+            document.addEventListener("DOMContentLoaded",initRevealAnimations);
+            function initRevealAnimations(){
+                const reveals=document.querySelectorAll(".reveal");
+                const observer=new IntersectionObserver(handleRevealEntries, {treshold:0.2});
+
+                reveals.forEach(function(el) {
+                    observer.observe(el);
+
+                });
+
+                function handleRevealEntries(entries){
+                    entries.forEach(function(entry){
+                        if(entry.isInteresting){
+                            entry.target.classList.add("show");
+                        }
+                        else{
+                            entry.target.classList.remove("show");
+                        }
+
+                    });
+                }
+
+
+
+            }
+
+
+
+
+
+          
+            document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".procards");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                    // Staggered delay
+                    const delay = [...cards].indexOf(entry.target) * 150; // 150ms gap
+                    setTimeout(() => entry.target.classList.add("show"), delay);
+
+                    // Uncomment for one-time animation
+                    // observer.unobserve(entry.target);
+                    } else {
+                    entry.target.classList.remove("show"); // re-animate on scroll back
+                    }
+                });
+                },
+                { threshold: 0.2 }
+            );
+
+            cards.forEach((card) => observer.observe(card));
+            });
+
+      
+
+                
+
+        </script>
+
+    </body>
