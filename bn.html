@@ -672,6 +672,21 @@
                         <button class="lan">HTML/CSS</button>
                     </div>
                     <div class="git">
+                        <a href="" class="gitbtn" target="_blank">View Code</a>
+                        <a href="https://mesandu2007.github.io/Mesandu2007-IIT-Sports-House-Finder/" class="demo" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+                <div class="procards">
+                    <img src="qr.png" class="projectpic">
+                    <h4>QR Code Generater</h4>
+                    <p>Developed a  simple web application where we could enter a URL or a  Text and generater a QR Code.
+                       This also could download the generated QR Code. 
+                    </p>
+                    <div class="sk">
+                        <button class="lan">Javascript</button>
+                        <button class="lan">HTML/CSS</button>
+                    </div>
+                    <div class="git">
                         <a href="https://github.com/Mesandu2007/Mesandu2007-IIT-Sports-House-Finder" class="gitbtn" target="_blank">View Code</a>
                         <a href="https://mesandu2007.github.io/Mesandu2007-IIT-Sports-House-Finder/" class="demo" target="_blank">Live Demo</a>
                     </div>
@@ -706,11 +721,10 @@
                 loop:true
 
             })
-            window.addEventListener('DOMContentLoaded',function(){
-                const img=document.querySelector('.pro');
-                img.classList.add('show');
 
-            });
+            const img=document.querySelector('.pro');
+            img.classList.add('show');
+
             document.addEventListener("DOMContentLoaded",initRevealAnimations);
             function initRevealAnimations(){
                 const reveals=document.querySelectorAll(".reveal");
