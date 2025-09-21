@@ -736,6 +736,8 @@
             
             const img=document.querySelector('.pro');
             img.classList.add('show');
+            
+            document.addEventListener("DOMContentLoaded",initRevealAnimations);
             function initRevealAnimations(){
                 const reveals=document.querySelectorAll(".reveal");
                 const observer=new IntersectionObserver(handleRevealEntries, {threshold:0.2});
