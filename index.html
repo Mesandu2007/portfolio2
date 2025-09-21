@@ -733,50 +733,60 @@
                 loop:true
 
             })
-            window.addEventListener('DOMContentLoaded',function(){
-                const img=document.querySelector('.pro');
-                img.classList.add('show');
+            
+            const img=document.querySelector('.pro');
+            img.classList.add('show');
+            function initRevealAnimations(){
+                const reveals=document.querySelectorAll(".reveal");
+                const observer=new IntersectionObserver(handleRevealEntries, {threshold:0.2});
 
-            });
-            document.addEventListener("DOMContentLoaded", function () {  // This waits until the HTML page has fully loaded
-            const reveals = document.querySelectorAll(".reveal"); // takes all the elements with the class .reveal
+                reveals.forEach(function(el) {
+                    observer.observe(el);
 
-            const observer = new IntersectionObserver((entries, observer) => {   //Creates a new IntersectionObserver                                                        //  which can detect when elements enter or leave the viewpor
-                entries.forEach(entry => { // for each used to run the function for each entry
+                });
+
+                function handleRevealEntries(entries){
+                    entries.forEach(function(entry){
+                        if(entry.isIntersecting){
+                            entry.target.classList.add("show");
+                        }
+                        else{
+                            entry.target.classList.remove("show");
+                        }
+
+                    });
+                }
+
+
+
+            }
+
+            
+            
+
+
+            document.addEventListener("DOMContentLoaded", function () {
+            const cards = document.querySelectorAll(".procards");
+            const observer = new IntersectionObserver(
+                (entries) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add("show");
-                    
-                    }
-                    else{
-                        entry.target.classList.remove("show");
+                    // Staggered delay
+                    const delay = [...cards].indexOf(entry.target) * 150; // 150ms gap
+                    setTimeout(() => entry.target.classList.add("show"), delay);
+
+                    // Uncomment for one-time animation
+                    // observer.unobserve(entry.target);
+                    } else {
+                    entry.target.classList.remove("show"); // re-animate on scroll back
                     }
                 });
-            }, { threshold: 0.2 });
+                },
+                { threshold: 0.2 }
+            );
 
-            reveals.forEach(el => observer.observe(el));
-        });
-        document.addEventListener("DOMContentLoaded", function () {
-        const cards = document.querySelectorAll(".procards");
-        const observer = new IntersectionObserver(
-            (entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                // Staggered delay
-                const delay = [...cards].indexOf(entry.target) * 150; // 150ms gap
-                setTimeout(() => entry.target.classList.add("show"), delay);
-
-                // Uncomment for one-time animation
-                // observer.unobserve(entry.target);
-                } else {
-                entry.target.classList.remove("show"); // re-animate on scroll back
-                }
+            cards.forEach((card) => observer.observe(card));
             });
-            },
-            { threshold: 0.2 }
-        );
-
-        cards.forEach((card) => observer.observe(card));
-        });
 
       
 
