@@ -409,63 +409,88 @@
             .fab fa-linkedin-in{
                 color:blue;
             }
-
-
-            .circles {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                z-index: -1;
+            .timeline {
+                padding: 80px 10%;
+                background: #0f2027;
+                color: #fff;
             }
 
-                .circles li {
+                .timeline-title {
+                text-align: center;
+                font-size: 2.5rem;
+                margin-bottom: 60px;
+                }
+
+                .timeline-container {
+                position: relative;
+                max-width: 900px;
+                margin: auto;
+                }
+
+                .timeline-container::after {
+                content: '';
                 position: absolute;
-                list-style: none;
-                width: 20px;
-                height: 20px;
-                background: rgba(255, 255, 255, 0.15);
-                animation: float 25s linear infinite;
-                bottom: -150px;
+                width: 4px;
+                background: #00c6ff;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                }
+
+                /* Timeline items */
+                .timeline-item {
+                padding: 20px 40px;
+                position: relative;
+                width: 50%;
+                }
+
+                .timeline-item::after {
+                content: '';
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                background: #00c6ff;
                 border-radius: 50%;
+                top: 30px;
+                z-index: 1;
                 }
 
-                .circles li:nth-child(1) {
-                left: 25%;
-                width: 80px;
-                height: 80px;
-                animation-duration: 18s;
+                /* Left */
+                .left {
+                left: 0;
                 }
 
-                .circles li:nth-child(2) {
-                left: 10%;
-                animation-duration: 12s;
+                .left::after {
+                right: -9px;
                 }
 
-                .circles li:nth-child(3) {
-                left: 70%;
-                width: 100px;
-                height: 100px;
-                animation-duration: 20s;
+                /* Right */
+                .right {
+                left: 50%;
                 }
 
-                @keyframes float {
-                0% {
-                    transform: translateY(0) rotate(0deg);
-                    opacity: 1;
-                }
-                100% {
-                    transform: translateY(-1000px) rotate(720deg);
-                    opacity: 0;
-                }
+                .right::after {
+                left: -9px;
                 }
 
+                /* Content card */
+                .content {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+                transition: transform 0.3s ease;
+                }
 
+                .content:hover {
+                transform: translateY(-5px);
+                }
 
-
-
+                .content h3 {
+                color: #00c6ff;
+                }
 
 
             @media(max-width:600px){
@@ -669,16 +694,7 @@
 
     </head>
     <body>
-        <ul class="circles">
-            <li></li><li></li><li></li><li></li><li></li>
-            <li></li><li></li><li></li><li></li><li></li>
-        </ul>
-
-
-
-
-
-
+       
         <nav>
             <ul class="sidebar" id="sideb">
                 <li onclick="hideSidebar()" ><a>
@@ -906,6 +922,38 @@
                 </div>
             </div>
         </div>
+        <section class="timeline">
+            <h2 class="timeline-title">Education Timeline</h2>
+            <div class="timeline-container">
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>2020-2022</h3>
+                        <h4>Lyceum International School Panadura</h4>
+                        <p>Completed my O/L examination in science stream</p>
+                        
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>2022-2024</h3>
+                        <h4>Lyceum International School Panadura</h4>
+                        <p>Completed my A/L examination in Mathematics stream</p>
+
+                    </div>
+
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>2023 – Present</h3>
+                        <h4>Informatics Institute of Technology (IIT)</h4>
+                        <p>BSc (Hons) in Computer Science – Westminster University.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
 
 
 
