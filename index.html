@@ -410,87 +410,7 @@
                 color:blue;
             }
             
-            section.timeline-section {
-                padding: 60px 20px;
-                background-color: #f9f9f9;
-            }
-
-            section.timeline-section h1 {
-                text-align: center;
-                color: #333;
-                margin-bottom: 50px;
-            }
-
-            .timeline {
-                position: relative;
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 0 20px;
-            }
-
-            /* Vertical line */
-            .timeline::after {
-                content: '';
-                position: absolute;
-                width: 4px;
-                background-color: #555;
-                top: 0;
-                bottom: 0;
-                left: 50%;
-                margin-left: -2px;
-            }
-
-            .timeline-item {
-                padding: 20px 30px;
-                position: relative;
-                background: white;
-                border-radius: 8px;
-                width: 50%;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                margin: 20px 0;
-            }
-
-            /* Left & right positioning */
-            .timeline-item.left {
-                left: 0;
-            }
-
-            .timeline-item.right {
-                left: 50%;
-            }
-
-            /* Circle markers */
-            .timeline-item::before {
-                content: '';
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                right: -10px;
-                background-color: #fff;
-                border: 4px solid #FF5733;
-                top: 20px;
-                border-radius: 50%;
-                z-index: 1;
-            }
-
-            .timeline-item.right::before {
-                left: -10px;
-            }
-
-            /* Timeline content */
-            .timeline-item h2 {
-                margin-top: 0;
-                color: #FF5733;
-            }
-
-            .timeline-item p {
-                margin: 10px 0 0;
-                color: #333;
-            }
-
-            
-
-
+    
             @media(max-width:600px){
                 .hideOnMobile{
                     display:none;
@@ -920,28 +840,7 @@
                 </div>
             </div>
         </div>
-        <section class="timeline-section">
-            <h1>My Timeline</h1>
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <h2>2020</h2>
-                    <p>Started my journey learning web development and exploring new technologies.</p>
-                </div>
-                <div class="timeline-item right">
-                    <h2>2021</h2>
-                    <p>Built my first full-stack project and collaborated with a team online.</p>
-                </div>
-                <div class="timeline-item left">
-                    <h2>2022</h2>
-                    <p>Joined a tech community and started contributing to open-source projects.</p>
-                </div>
-                <div class="timeline-item right">
-                    <h2>2023</h2>
-                    <p>Developed advanced projects using AI and responsive web designs.</p>
-                </div>
-            </div>
-        </section>
-     
+      
 
 
 
