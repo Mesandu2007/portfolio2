@@ -409,6 +409,125 @@
             .fab fa-linkedin-in{
                 color:blue;
             }
+             .c4 {
+                margin-top: 90px;
+            }
+
+            .c4 h3 {
+                font-size: 27px;
+                color: white;
+                text-align: center;
+                font-weight: 900;
+                margin-bottom: 50px;
+            }
+
+            .timeline {
+                position: relative;
+                max-width: 1000px;
+                margin: auto;
+            }
+
+            /* vertical line */
+            .timeline::after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                background: #38bdf8;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            /* timeline item */
+            .timeline .container {
+                position: relative;
+                width: 50%;
+                padding: 20px 40px;
+            }
+
+            /* dot */
+            .timeline .container::after {
+                content: '';
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                background: #38bdf8;
+                border-radius: 50%;
+                top: 30px;
+                z-index: 1;
+            }
+
+            /* left */
+            .timeline .left {
+                left: 0;
+            }
+
+            .timeline .left::after {
+                right: -8px;
+            }
+
+            /* right */
+            .timeline .right {
+                left: 50%;
+            }
+
+            .timeline .right::after {
+                left: -8px;
+            }
+
+            /* card */
+            .timeline .content {
+                background: #1e293b;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            }
+
+            .timeline .content h2 {
+                color: #38bdf8;
+                margin-bottom: 6px;
+            }
+
+            .timeline .content .date {
+                font-size: 0.85rem;
+                opacity: 0.7;
+                margin-bottom: 6px;
+            }
+
+            .timeline .content p {
+                color: #cfcfcf;
+                line-height: 1.5;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                  
 
@@ -903,22 +1022,42 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="c4 reveal" id="education">
+            <h3>Education</h3>
+            <div class="timeline">
+                <div class="container left">
+                    <div class="content">
+                        <div class="date">2021 - 2022</div>
+                        <h2>Secondary Education</h2>
+                        <p>Completed school education with a strong foundation in mathematics and IT.</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <div class="date">2023</div>
+                        <h2>BSc Computer Science</h2>
+                        <p>Started BSc Computer Science at University of Westminster(IIT Srilanka)</p>
+                    </div>
+                </div>
+                <div class="container right">
+                    <div class="content">
+                        <div class="date">2025</div>
+                        <h2>Advanced Projects</h2>
+                        <p>Working on full-stack, AI-based, and real-world software applications.</p>
+                    </div>
+                </div>
+
+            </div>
+
         </div>    
+
         
 
 
 
         
       
-
-
-
-
-
-        
-
-        
-       
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         <script>
             function showSidebar(){
