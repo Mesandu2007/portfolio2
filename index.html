@@ -518,6 +518,101 @@
             .c5{
                 margin-top: 90px;
             }
+             .contact-section {
+                min-height: 100vh;
+                padding: 60px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                }
+
+                .contact-section h2 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                }
+
+                .contact-section p {
+                opacity: 0.8;
+                margin-bottom: 30px;
+                text-align: center;
+                }
+
+                .contact-form {
+                width: 100%;
+                max-width: 420px;
+                padding: 30px;
+                background: rgba(255, 255, 255, 0.12);
+                backdrop-filter: blur(14px);
+                -webkit-backdrop-filter: blur(14px);
+                border-radius: 18px;
+                border: 1px solid rgba(255, 255, 255, 0.25);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+                }
+
+                .input-group {
+                position: relative;
+                margin-bottom: 25px;
+                }
+
+                .input-group input,
+                .input-group textarea {
+                width: 100%;
+                padding: 12px 10px;
+                background: transparent;
+                border: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+                outline: none;
+                color: #fff;
+                font-size: 1rem;
+                }
+
+                .input-group label {
+                position: absolute;
+                top: 50%;
+                left: 10px;
+                transform: translateY(-50%);
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.7);
+                pointer-events: none;
+                transition: 0.3s;
+                }
+
+                .input-group textarea ~ label {
+                top: 18px;
+                }
+
+                .input-group input:focus ~ label,
+                .input-group input:valid ~ label,
+                .input-group textarea:focus ~ label,
+                .input-group textarea:valid ~ label {
+                top: -8px;
+                font-size: 0.75rem;
+                color: #8f9cff;
+                }
+
+                button {
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 30px;
+                background: linear-gradient(135deg, #6a85ff, #b37bff);
+                color: #fff;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: 0.3s ease;
+                }
+
+                button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(138, 155, 255, 0.5);
+                }
+
+
+
+
+
 
         
 
@@ -1040,11 +1135,36 @@
                 </div>
             </div>
         </div>
-        <div class="c5 reveal" id="timeline 5">
-            <h3>Contact Me</h3>
+        <section class="contact-section" id="contact">
+            <h2>Contact Me</h2>
+            <p>Have a project or want to collaborate? Let’s talk.</p>
+
+            <form class="contact-form">
+                <div class="input-group">
+                    <input type="text" required>
+                    <label>Your Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" required>
+                    <label>Email Address</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea rows="4" required></textarea>
+                    <label>Your Message</label>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+        
+                 
 
 
-        </div>
+            
+
+
+    
 
 
 
