@@ -609,272 +609,209 @@
                 box-shadow: 0 6px 20px rgba(138, 155, 255, 0.5);
                 }
 
+                @media(max-width:600px){
+                    .hideOnMobile{
+                        display:none;
+                    }
+                    .menu-button{
+                        display: block;
+                    }
+                    nav a{
+                        font-size:19px;
+                    }
 
+                
+                    .sidebar{
+                        display: flex;
+                    }
+                
+                    nav a:not(.name a):hover{
+                        background-color: grey;
+                        border-radius: 8px;
+                        width: fit-content;
+                    }
+                    .auto-type{
+                        font-size: 30px;
+                        color:blue;
+                        text-align: center;
+                        line-height:1.5;
+                    }
 
-
-
-
-        
-
-           
-    
-
+                    .auto-type .second-line{
+                        display: block;
+                        font-size: 30px;
                         
+                    }
+                    .name a{
+                        font-size:25px;
+                    }
+                
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+                    nav a:not(.name a):hover{
+                        background-color: grey;
+                        border-radius: 8px;
+                        width: fit-content;
     
-            @media(max-width:600px){
-                .hideOnMobile{
-                    display:none;
-                }
-                .menu-button{
-                    display: block;
-                }
-                nav a{
-                    font-size:19px;
-                }
-
-               
-                .sidebar{
-                    display: flex;
-                }
-               
-                nav a:not(.name a):hover{
-                    background-color: grey;
-                    border-radius: 8px;
-                    width: fit-content;
-                }
-                .auto-type{
-                    font-size: 30px;
-                    color:blue;
-                    text-align: center;
-                    line-height:1.5;
-                }
-
-                .auto-type .second-line{
-                    display: block;
-                    font-size: 30px;
-                    
-                }
-                .name a{
-                    font-size:25px;
-                }
-               
-
-
-                nav a:not(.name a):hover{
-                    background-color: grey;
-                    border-radius: 8px;
-                    width: fit-content;
- 
-                }
-                .pro{
-                    margin-top:45px;
-                }
-
-            }
-            @media(min-width:600px) and (max-width:1050px){
-                .hideOnMobile{
-                    display:none;
-                }
-                .menu-button{
-                    display: block;
-                }
-                nav a{
-                    font-size: 15px;
-                }
-
-               
-                .sidebar{
-                    display: flex;
-                }
-               
-                nav a:not(.name a):hover{
-                    background-color: grey;
-                    border-radius: 8px;
-                    width: fit-content;
-                }
-                .auto-type{
-                    font-size: 30px;
-                    color:blue;
-                    text-align: center;
-                    line-height:1.5;
-                }
-
-                .auto-type .second-line{
-                    display: block;
-                    font-size: 30px;
-                    
-                }
-                .name a{
-                    font-size:26px;
-                }
-           
-
-
-                nav a:not(.name a):hover{
-                    background-color: grey;
-                    border-radius: 8px;
-                    width: fit-content;
- 
-                }
-                .pro{
-                    margin-top:45px ;
-                }
-                .card1{
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-                .procards {
-                    flex: 1 1 calc(50% - 40px); /* 2 cards in a row */
-                    max-width: calc(50% - 40px);
-                }
-                .projects{
-                    align-items: stretch;
-                }
-                                
-
-
-            }
-            @media(max-width:600px) and (pointer: coarse){
-                .hideOnMobile{
-                    display:none;
-                }
-                .menu-button{
-                    display: block;
-                }
-                nav a{
-                    font-size:20px;
-                }
-
-               
-                .sidebar{
-                    display: flex;
-                }
-               
-                nav a:not(.name a):hover{
-                    background-color: grey;
-                    border-radius: 8px;
-                    width: fit-content;
-                }
-                .auto-type{
-                    font-size: 35px;
-                    color:blue;
-                    text-align: center;
-                    line-height:1.5;
-                }
-
-                .auto-type .second-line{
-                    display: block;
-                    font-size: 35px;
-                    
-                }
-                .name a{
-                    font-size:22px;
-                }
-               
-
-
-                nav a:not(.name a):hover{
-                    background-color: grey;
-                    border-radius: 8px;
-                    width: fit-content;
- 
-                }
-                .pro{
-                    margin-top:45px;
-                    height: 250px;
-                }
-                .social-button i{
-                    font-size: 29px;
-                }
-                .social-button{
-                    font-size:19px ;
-                }
-                .card1{
-                    font-size: 19px;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    line-height: 1.6;
-                    
-                }
-                .procards{
-                    width: 90%;
-                }
-                .skillcards{
-                    background-color: #b6b5b5;
-                }
-                .lan{
-                    border: rgb(255, 255, 255) solid 2px;
-                    border-radius: 15px;
-                    background-color: #201f1f;
-                    padding:8px;
-                    font-size:13px;
-                    color: rgb(255, 253, 253);
-                }
-                .procards p{
-                    color: white;
-                }
-                .timeline-content{
-                    color: white;
+                    }
+                    .pro{
+                        margin-top:45px;
+                    }
 
                 }
-                .contact-form{
-                    width: 70%;
-                    max-width:none;
-                }
-               
+                @media(min-width:600px) and (max-width:1050px){
+                    .hideOnMobile{
+                        display:none;
+                    }
+                    .menu-button{
+                        display: block;
+                    }
+                    nav a{
+                        font-size: 15px;
+                    }
 
-            }
-          
+                
+                    .sidebar{
+                        display: flex;
+                    }
+                
+                    nav a:not(.name a):hover{
+                        background-color: grey;
+                        border-radius: 8px;
+                        width: fit-content;
+                    }
+                    .auto-type{
+                        font-size: 30px;
+                        color:blue;
+                        text-align: center;
+                        line-height:1.5;
+                    }
+
+                    .auto-type .second-line{
+                        display: block;
+                        font-size: 30px;
+                        
+                    }
+                    .name a{
+                        font-size:26px;
+                    }
+            
+
+
+                    nav a:not(.name a):hover{
+                        background-color: grey;
+                        border-radius: 8px;
+                        width: fit-content;
+    
+                    }
+                    .pro{
+                        margin-top:45px ;
+                    }
+                    .card1{
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    .procards {
+                        flex: 1 1 calc(50% - 40px); /* 2 cards in a row */
+                        max-width: calc(50% - 40px);
+                    }
+                    .projects{
+                        align-items: stretch;
+                    }
+                                    
+
+                }
+                @media(max-width:600px) and (pointer: coarse){
+                    .hideOnMobile{
+                        display:none;
+                    }
+                    .menu-button{
+                        display: block;
+                    }
+                    nav a{
+                        font-size:20px;
+                    }
+
+                
+                    .sidebar{
+                        display: flex;
+                    }
+                
+                    nav a:not(.name a):hover{
+                        background-color: grey;
+                        border-radius: 8px;
+                        width: fit-content;
+                    }
+                    .auto-type{
+                        font-size: 35px;
+                        color:blue;
+                        text-align: center;
+                        line-height:1.5;
+                    }
+
+                    .auto-type .second-line{
+                        display: block;
+                        font-size: 35px;
+                        
+                    }
+                    .name a{
+                        font-size:22px;
+                    }
+                
+
+
+                    nav a:not(.name a):hover{
+                        background-color: grey;
+                        border-radius: 8px;
+                        width: fit-content;
+    
+                    }
+                    .pro{
+                        margin-top:45px;
+                        height: 250px;
+                    }
+                    .social-button i{
+                        font-size: 29px;
+                    }
+                    .social-button{
+                        font-size:19px ;
+                    }
+                    .card1{
+                        font-size: 19px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        line-height: 1.6;
+                        
+                    }
+                    .procards{
+                        width: 90%;
+                    }
+                    .skillcards{
+                        background-color: #b6b5b5;
+                    }
+                    .lan{
+                        border: rgb(255, 255, 255) solid 2px;
+                        border-radius: 15px;
+                        background-color: #201f1f;
+                        padding:8px;
+                        font-size:13px;
+                        color: rgb(255, 253, 253);
+                    }
+                    .procards p{
+                        color: white;
+                    }
+                    .timeline-content{
+                        color: white;
+
+                    }
+                    .contact-form{
+                        width: 70%;
+                        max-width:none;
+                    }
+                
+
+                }
+            
             
             
 
@@ -941,7 +878,6 @@
                     My skills span across data science and front-end development, where I enjoy turning data into insights and designing interactive, user-friendly digital experiences.
                     I’m constantly exploring new tools and frameworks to grow as a developer and deepen my understanding of how data can drive innovation.
                     With a blend of creativity and technical expertise, my goal is to build solutions that make a real impact while continuing to develop into a versatile software professional. </p>
-
             </div>
         </div>
         <div class="c2 reveal" id="projectid">
@@ -1162,65 +1098,8 @@
             </form>
         </section>
         <script>
-            function showSidebar(){
-                document.querySelector('.sidebar').classList.add('show');
-            }
-
-            function hideSidebar(){
-                document.querySelector('.sidebar').classList.remove('show');
-            }
-
-            /* Typed text */
-            var typed = new Typed(".auto-type",{
-                strings:["COMPUTER SCIENCE<span class='second-line'> UNDERGRADUATE</span>"],
-                typeSpeed:60,
-                backSpeed:70,
-                loop:true
-            });
-
-            /* Profile image animation */
-            const profile = document.querySelector('.pro');
-            profile.classList.add('show');
-
-            /* Reveal sections */
-            const reveals = document.querySelectorAll(".reveal");
-
-            const revealObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                } else {
-                    entry.target.classList.remove("show");
-                }
-                });
-            },
-            { threshold: 0.3 }
-            );
-
-            reveals.forEach((reveal) => {
-            revealObserver.observe(reveal);
-            });
-
-            /* Project cards animation */
-            const cards = document.querySelectorAll(".procards");
-
-            const cardObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                } else {
-                    entry.target.classList.remove("show");
-                }
-                });
-            },
-            { threshold: 0.3 }
-            );
-
-            cards.forEach((card) => {
-            cardObserver.observe(card);
-            });
+            
+            
         </script>
 
         
