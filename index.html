@@ -1097,65 +1097,51 @@
                 <button type="submit" class="button2">Send Message</button>
             </form>
         </section>
+        <!-- Include Typed.js first -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
         <script>
-            // Sidebar toggle functions
-            function showSidebar() {
-                const sidebar = document.querySelector('.sidebar');
-                sidebar.classList.add('show');
-            }
-
-            function hideSidebar() {
-                const sidebar = document.querySelector('.sidebar');
-                sidebar.classList.remove('show');
-            }
-
-            // Wait for DOM to be ready
             document.addEventListener("DOMContentLoaded", () => {
 
-                // Typed.js animation
-                var typed = new Typed(".auto-type", {
+            // Typed.js
+            new Typed(".auto-type", {
                 strings: ["COMPUTER SCIENCE<span class='second-line'> UNDERGRADUATE</span>"],
                 typeSpeed: 60,
                 backSpeed: 70,
                 loop: true
-                });
+            });
 
-                // Profile image animation
-                const img = document.querySelector('.pro');
-                if (img) img.classList.add('show');
+            // Profile image animation
+            const img = document.querySelector('.pro');
+            if (img) img.classList.add('show');
 
-                // Reveal sections animation
-                const reveals = document.querySelectorAll(".reveal");
-                const revealObserver = new IntersectionObserver((entries) => {
+            // Reveal sections
+            const reveals = document.querySelectorAll(".reveal");
+            const revealObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                    entry.target.classList.add("show");
-                    } else {
-                    entry.target.classList.remove("show");
-                    }
+                entry.target.classList.toggle("show", entry.isIntersecting);
                 });
-                }, { threshold: 0.2 });
+            }, { threshold: 0.2 });
+            reveals.forEach(el => revealObserver.observe(el));
 
-                reveals.forEach(el => revealObserver.observe(el));
-
-                // Project cards animation with staggered delay
-                const cards = document.querySelectorAll(".procards");
-                const cardObserver = new IntersectionObserver((entries) => {
+            // Project cards
+            const cards = document.querySelectorAll(".procards");
+            const cardObserver = new IntersectionObserver(entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                    const delay = [...cards].indexOf(entry.target) * 150; // 150ms gap
+                if (entry.isIntersecting) {
+                    const delay = [...cards].indexOf(entry.target) * 150;
                     setTimeout(() => entry.target.classList.add("show"), delay);
-                    } else {
-                    entry.target.classList.remove("show"); // re-animate on scroll back
-                    }
+                } else {
+                    entry.target.classList.remove("show");
+                }
                 });
-                }, { threshold: 0.3 });
-
-                cards.forEach(card => cardObserver.observe(card));
+            }, { threshold: 0.3 });
+            cards.forEach(card => cardObserver.observe(card));
 
             });
- 
         </script>
+
+        
 
         
 
