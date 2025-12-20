@@ -409,6 +409,106 @@
             .fab fa-linkedin-in{
                 color:blue;
             }
+
+                 
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+    /* ===== TIMELINE ===== */
+    .timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 80px auto;
+    }
+
+    /* Vertical line */
+    .timeline::after {
+        content:'';
+        position:absolute;
+        width:4px;
+        background:#38bdf8;
+        top:0;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    /* Timeline items */
+    .container {
+        position: relative;
+        width: 50%;
+        padding: 20px 40px;
+    }
+
+    .container::after {
+        content:'';
+        position:absolute;
+        width:18px;
+        height:18px;
+        background:#38bdf8;
+        border-radius:50%;
+        top:30px;
+        z-index:1;
+    }
+
+    /* Left & Right */
+    .left { left:0; }
+    .left::after { right:-9px; }
+
+    .right { left:50%; }
+    .right::after { left:-9px; }
+
+    /* Content */
+    .content {
+        background:#1e293b;
+        padding:20px;
+        border-radius:12px;
+        box-shadow:0 10px 25px rgba(0,0,0,.3);
+        transition:.3s;
+    }
+
+    .content:hover {
+        transform:translateY(-5px);
+    }
+
+    .content h2 {
+        color:#38bdf8;
+        margin-bottom:8px;
+    }
+
+    .date {
+        font-size:.85rem;
+        opacity:.7;
+        margin-bottom:6px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             
     
             @media(max-width:600px){
@@ -840,6 +940,47 @@
                 </div>
             </div>
         </div>
+        <div class="c4 reveal" id="timeline 4">
+            <h3>Education</h3>
+            <div class="timeline">
+                <div class="container left">
+                    <div class="content">
+                        <div class="date">2022</div>
+                        <h2>Started Programming</h2>
+                        <p>Learned HTML, CSS and basic web concepts.</p>
+                    </div>
+                </div>
+
+                <div class="container right">
+                    <div class="content">
+                        <div class="date">2023</div>
+                        <h2>Web Development</h2>
+                        <p>Built responsive websites and UI projects.</p>
+                    </div>
+                </div>
+
+                <div class="container left">
+                    <div class="content">
+                        <div class="date">2024</div>
+                        <h2>Python Projects</h2>
+                        <p>Worked on GUI apps, file handling and task managers.</p>
+                    </div>
+                </div>
+
+                <div class="container right">
+                    <div class="content">
+                        <div class="date">2025</div>
+                        <h2>Advanced Applications</h2>
+                        <p>AI, posture detection and full applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+
+
+
+        
       
 
 
