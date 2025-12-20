@@ -1195,7 +1195,7 @@
                     revealObserver.unobserve(entry.target);
                 }
                 });
-            }, { threshold: 0 });
+            }, { threshold: 1 });
 
             reveals.forEach(el => revealObserver.observe(el));
             });
@@ -1218,7 +1218,7 @@
                     observer.unobserve(entry.target);
                 }
                 });
-            }, { threshold: 0 });
+            }, { threshold: 1 });
 
             cards.forEach(card => cardObserver.observe(card));
             });
