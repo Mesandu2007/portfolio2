@@ -1162,6 +1162,68 @@
             </form>
         </section>
         
+
+
+        <script>
+            function showSidebar(){
+            document.querySelector('.sidebar').classList.add('show');
+            }
+
+            function hideSidebar(){
+            document.querySelector('.sidebar').classList.remove('show');
+            }
+
+            // Typed.js
+            new Typed(".auto-type",{
+            strings:["COMPUTER SCIENCE<span class='second-line'> UNDERGRADUATE</span>"],
+            typeSpeed:60,
+            backSpeed:70,
+            loop:true
+            });
+
+            // Profile image animation
+            document.querySelector('.pro').classList.add('show');
+
+            // Reveal sections
+            document.addEventListener("DOMContentLoaded", () => {
+            const reveals = document.querySelectorAll(".reveal");
+
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    entry.target.classList.add("show");
+                    revealObserver.unobserve(entry.target);
+                }
+                });
+            }, { threshold: 0 });
+
+            reveals.forEach(el => revealObserver.observe(el));
+            });
+
+            // Project cards animation (FIXED)
+            document.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll(".procards");
+
+            // Fallback for older mobile browsers
+            if (!("IntersectionObserver" in window)) {
+                cards.forEach(card => card.classList.add("show"));
+                return;
+            }
+
+            const cardObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                if(entry.isIntersecting){
+                    const delay = [...cards].indexOf(entry.target) * 120;
+                    setTimeout(() => entry.target.classList.add("show"), delay);
+                    observer.unobserve(entry.target);
+                }
+                });
+            }, { threshold: 0 });
+
+            cards.forEach(card => cardObserver.observe(card));
+            });
+        </script>
+
                  
 
 
@@ -1179,84 +1241,6 @@
 
            
       
-        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-        <script>
-            function showSidebar(){
-                const sidebar=document.querySelector('.sidebar');
-                sidebar.classList.add('show');
-
-            }
-            function hideSidebar(){
-                const sidebar=document.querySelector('.sidebar');
-                sidebar.classList.remove('show');
-
-            }
-
-            var typed=new Typed(".auto-type",{
-                strings:["COMPUTER SCIENCE<span class='second-line'> UNDERGRADUATE</span>"],
-                typeSpeed:60,
-                backSpeed:70,
-                loop:true
-
-            })
-            
-            const img=document.querySelector('.pro');
-            img.classList.add('show');
-            
-            document.addEventListener("DOMContentLoaded",initRevealAnimations);
-            function initRevealAnimations(){
-                const reveals=document.querySelectorAll(".reveal");
-                const observer=new IntersectionObserver(handleRevealEntries, {threshold:0.2});
-
-                reveals.forEach(function(el) {
-                    observer.observe(el);
-
-                });
-
-                function handleRevealEntries(entries){
-                    entries.forEach(function(entry){
-                        if(entry.isIntersecting){
-                            entry.target.classList.add("show");
-                        }
-                        else{
-                            entry.target.classList.remove("show");
-                        }
-
-                    });
-                }
-
-
-
-            }
-
-            
-            
-
-
-            document.addEventListener("DOMContentLoaded", function () {
-            const cards = document.querySelectorAll(".procards");
-            const observer = new IntersectionObserver(
-                (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                    // Staggered delay
-                    const delay = [...cards].indexOf(entry.target) * 150; // 150ms gap
-                    setTimeout(() => entry.target.classList.add("show"), delay);
-
-                    // Uncomment for one-time animation
-                    // observer.unobserve(entry.target);
-                    } else {
-                    entry.target.classList.remove("show"); // re-animate on scroll back
-                    }
-                });
-                },
-                { threshold: 0.3 }
-            );
-
-            cards.forEach((card) => observer.observe(card));
-            });
-
-    
-        </script>
+       
 
     </body>
