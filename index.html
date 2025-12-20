@@ -1164,66 +1164,7 @@
         
 
 
-        <script>
-            function showSidebar(){
-            document.querySelector('.sidebar').classList.add('show');
-            }
-
-            function hideSidebar(){
-            document.querySelector('.sidebar').classList.remove('show');
-            }
-
-            // Typed.js
-            new Typed(".auto-type",{
-            strings:["COMPUTER SCIENCE<span class='second-line'> UNDERGRADUATE</span>"],
-            typeSpeed:60,
-            backSpeed:70,
-            loop:true
-            });
-
-            // Profile image animation
-            document.querySelector('.pro').classList.add('show');
-
-            // Reveal sections
-            document.addEventListener("DOMContentLoaded", () => {
-            const reveals = document.querySelectorAll(".reveal");
-
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    entry.target.classList.add("show");
-                    revealObserver.unobserve(entry.target);
-                }
-                });
-            }, { threshold: 1 });
-
-            reveals.forEach(el => revealObserver.observe(el));
-            });
-
-            // Project cards animation (FIXED)
-            document.addEventListener("DOMContentLoaded", () => {
-            const cards = document.querySelectorAll(".procards");
-
-            // Fallback for older mobile browsers
-            if (!("IntersectionObserver" in window)) {
-                cards.forEach(card => card.classList.add("show"));
-                return;
-            }
-
-            const cardObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                if(entry.isIntersecting){
-                    const delay = [...cards].indexOf(entry.target) * 120;
-                    setTimeout(() => entry.target.classList.add("show"), delay);
-                    observer.unobserve(entry.target);
-                }
-                });
-            }, { threshold: 1 });
-
-            cards.forEach(card => cardObserver.observe(card));
-            });
-        </script>
-
+        
                  
 
 
