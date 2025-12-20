@@ -409,6 +409,7 @@
             .fab fa-linkedin-in{
                 color:blue;
             }
+
              .c4 {
                 margin-top: 90px;
             }
@@ -418,95 +419,96 @@
                 color: white;
                 text-align: center;
                 font-weight: 900;
-                margin-bottom: 50px;
+                margin-bottom: 60px;
             }
 
+            /* Timeline wrapper */
             .timeline {
                 position: relative;
                 max-width: 1000px;
                 margin: auto;
+                padding-bottom: 40px;
             }
 
-            /* vertical line */
+            /* Vertical line */
             .timeline::after {
-                content: '';
+                content: "";
                 position: absolute;
                 width: 4px;
-                background: #38bdf8;
+                background-color: #38bdf8;
                 top: 0;
                 bottom: 0;
                 left: 50%;
                 transform: translateX(-50%);
             }
 
-            /* timeline item */
-            .timeline .container {
+            /* Timeline item */
+            .timeline-item {
                 position: relative;
                 width: 50%;
                 padding: 20px 40px;
+                box-sizing: border-box;
             }
 
-            /* dot */
-            .timeline .container::after {
-                content: '';
+            /* Dot */
+            .timeline-item::after {
+                content: "";
                 position: absolute;
                 width: 16px;
                 height: 16px;
-                background: #38bdf8;
+                background-color: #38bdf8;
                 border-radius: 50%;
-                top: 30px;
-                z-index: 1;
+                top: 28px;
+                z-index: 2;
             }
 
-            /* left */
-            .timeline .left {
+            /* Left side */
+            .timeline-item.left {
                 left: 0;
+                text-align: right;
             }
 
-            .timeline .left::after {
+            .timeline-item.left::after {
                 right: -8px;
             }
 
-            /* right */
-            .timeline .right {
+            /* Right side */
+            .timeline-item.right {
                 left: 50%;
+                text-align: left;
             }
 
-            .timeline .right::after {
+            .timeline-item.right::after {
                 left: -8px;
             }
 
-            /* card */
-            .timeline .content {
-                background: #1e293b;
+            /* Card content */
+            .timeline-content {
+                background-color: #1e293b;
                 padding: 20px;
                 border-radius: 12px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
             }
 
-            .timeline .content h2 {
+            .timeline-content h2 {
                 color: #38bdf8;
                 margin-bottom: 6px;
+                font-size: 18px;
             }
 
-            .timeline .content .date {
+            .timeline-content .date {
                 font-size: 0.85rem;
                 opacity: 0.7;
                 margin-bottom: 6px;
+                color: #d1d5db;
             }
 
-            .timeline .content p {
+            .timeline-content p {
                 color: #cfcfcf;
-                line-height: 1.5;
+                line-height: 1.6;
+                font-size: 15px;
             }
-
-
-
-
-
-
-
-
+                        
 
 
 
@@ -990,32 +992,32 @@
         <div class="c4 reveal" id="timeline 4">
             <h3>Education</h3>
             <div class="timeline">
-                <div class="container left">
-                    <div class="content">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
                         <div class="date">2022</div>
                         <h2>Started Programming</h2>
                         <p>Learned HTML, CSS and basic web concepts.</p>
                     </div>
                 </div>
 
-                <div class="container right">
-                    <div class="content">
+                <div class="timeline-item right">
+                    <div class="timeline-content">
                         <div class="date">2023</div>
                         <h2>Web Development</h2>
                         <p>Built responsive websites and UI projects.</p>
                     </div>
                 </div>
 
-                <div class="container left">
-                    <div class="content">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
                         <div class="date">2024</div>
                         <h2>Python Projects</h2>
                         <p>Worked on GUI apps, file handling and task managers.</p>
                     </div>
                 </div>
 
-                <div class="container right">
-                    <div class="content">
+                <div class="timeline-item right">
+                    <div class="timeline-content">
                         <div class="date">2025</div>
                         <h2>Advanced Applications</h2>
                         <p>AI, posture detection and full applications.</p>
@@ -1023,34 +1025,7 @@
                 </div>
             </div>
         </div>
-        <div class="c4 reveal" id="education">
-            <h3>Education</h3>
-            <div class="timeline">
-                <div class="container left">
-                    <div class="content">
-                        <div class="date">2021 - 2022</div>
-                        <h2>Secondary Education</h2>
-                        <p>Completed school education with a strong foundation in mathematics and IT.</p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <div class="date">2023</div>
-                        <h2>BSc Computer Science</h2>
-                        <p>Started BSc Computer Science at University of Westminster(IIT Srilanka)</p>
-                    </div>
-                </div>
-                <div class="container right">
-                    <div class="content">
-                        <div class="date">2025</div>
-                        <h2>Advanced Projects</h2>
-                        <p>Working on full-stack, AI-based, and real-world software applications.</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>    
+           
 
         
 
