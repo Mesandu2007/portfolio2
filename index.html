@@ -612,6 +612,114 @@
                     overflow-wrap: break-word;
                     hyphens: auto;
                 }
+                .footer {
+                    margin-top: 120px;
+                    background: rgba(255, 255, 255, 0.08);
+                    backdrop-filter: blur(12px);
+                    -webkit-backdrop-filter: blur(12px);
+                    border-top: 1px solid rgba(255, 255, 255, 0.2);
+                    color: #e5e5e5;
+                }
+
+                .footer-container {
+                    max-width: 1200px;
+                    margin: auto;
+                    padding: 50px 20px;
+                    display: flex;
+                    gap: 40px;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+
+                /* Brand */
+                .footer-brand {
+                    flex: 1 1 300px;
+                }
+
+                .footer-brand h3 {
+                    font-size: 22px;
+                    color: #38bdf8;
+                    margin-bottom: 10px;
+                }
+
+                .footer-brand p {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    opacity: 0.85;
+                }
+
+                /* Links */
+                .footer-links {
+                    flex: 1 1 180px;
+                }
+
+                .footer-links h4 {
+                    font-size: 16px;
+                    margin-bottom: 12px;
+                    color: #fff;
+                }
+
+                .footer-links a {
+                    display: block;
+                    text-decoration: none;
+                    color: #cfcfcf;
+                    margin-bottom: 8px;
+                    font-size: 14px;
+                    transition: 0.3s;
+                }
+
+                .footer-links a:hover {
+                    color: #38bdf8;
+                    transform: translateX(5px);
+                }
+
+                /* Social */
+                .footer-social {
+                    flex: 1 1 180px;
+                }
+
+                .footer-social h4 {
+                    font-size: 16px;
+                    margin-bottom: 12px;
+                }
+
+                .footer-icons {
+                    display: flex;
+                    gap: 15px;
+                }
+
+                .footer-icons a {
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    background: rgba(255, 255, 255, 0.12);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    font-size: 18px;
+                    transition: 0.3s ease;
+                }
+
+                .footer-icons a:hover {
+                    background: #38bdf8;
+                    color: #000;
+                    transform: translateY(-4px);
+                    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+                }
+
+                /* Bottom */
+                .footer-bottom {
+                    text-align: center;
+                    padding: 15px;
+                    font-size: 13px;
+                    background: rgba(0, 0, 0, 0.4);
+                    opacity: 0.8;
+                }
+
+
+
+
 
 
 
@@ -1146,6 +1254,73 @@
                 <button type="submit" class="button2">Send Message</button>
             </form>
         </section>
+        <footer class="footer">
+            <div class="footer-container">
+
+                <!-- Left -->
+                <div class="footer-brand">
+                    <h3>Mesandu Manujitha</h3>
+                    <p>Computer Science Undergraduate passionate about building clean and impactful digital experiences.</p>
+                </div>
+
+                <!-- Center -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#projectid">Projects</a>
+                    <a href="#skills3">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <!-- Right -->
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="footer-icons">
+                        <a href="https://github.com/Mesandu2007" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mesandugun2007/" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2025 Mesandu Manujitha. All rights reserved.
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- Include Typed.js first -->
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
@@ -1209,30 +1384,5 @@
 
 
         </script>
-
-        
-
-        
-
-
-        
-                 
-
-
-            
-
-
-    
-
-
-
-
-
-
-        
-
-           
-      
-       
 
     </body>
