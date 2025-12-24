@@ -74,7 +74,8 @@
                 background-color: rgba(255, 255, 255, 0.203);
                 box-shadow:-10px 0 10px rgba(0,0,0,0.1);
                 display:flex;
-                z-index: 999;
+                z-index: 1001;
+                pointer-events: none; 
                 background-color: rgba(255, 255, 255, 0.203);
                 box-shadow:-10px 0 10px rgba(0,0,0,0.1);
                 backdrop-filter: blur(10px);
@@ -89,7 +90,7 @@
             }
             .sidebar.show {
                 transform: translateX(0); 
-              /*  pointer-events: auto;*/
+                pointer-events: auto;
                
             }
             .sidebar li{
